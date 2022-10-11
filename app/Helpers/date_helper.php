@@ -175,13 +175,11 @@ if (!function_exists('format_timestamp')) {
         $bln = $explode_tanggal[1];
         $thn = $explode_tanggal[0];
 
-        $bln = bln($bln);
-        $ubahTanggal = "$tgl-$bln-$thn | $waktu";
-        if ($jam) {
-            $jam = substr($waktu, 0, -3);
-            return $jam;
-        }
-        return $ubahTanggal;
+        $datetime = [
+            'date' => $thn . '-' . $bln . '-' . $tgl,
+            'time' => $waktu
+        ];
+        return $datetime;
     }
 }
 
