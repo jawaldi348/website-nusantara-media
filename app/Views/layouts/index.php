@@ -58,7 +58,7 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid p-0 mb-3">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-lg-5">
+        <nav class="navbar navbar-expand-lg bg-navbar navbar-light py-2 py-lg-0 px-lg-5">
             <a href="" class="navbar-brand d-block d-lg-none">
                 <h1 class="m-0 display-5 text-uppercase"><span class="text-primary">News</span>Room</h1>
             </a>
