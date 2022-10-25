@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>NEWSROOM - Free Bootstrap Magazine Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- s: section meta -->
+    <?= $this->renderSection('tagmeta') ?>
+    <!-- e: section meta -->
 
     <!-- Favicon -->
     <link href="<?= assets() ?>img/favicon.ico" rel="icon">
