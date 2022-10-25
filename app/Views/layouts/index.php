@@ -21,6 +21,9 @@
     <!-- Libraries Stylesheet -->
     <link href="<?= assets() ?>lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+    <!-- Flickity -->
+    <link rel="stylesheet" href="<?= assets() ?>lib/flickity/flickity.css" media="screen">
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?= assets() ?>css/style.css" rel="stylesheet">
 </head>
@@ -441,6 +444,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="<?= assets() ?>lib/easing/easing.min.js"></script>
     <script src="<?= assets() ?>lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Flickity -->
+    <script src="<?= assets() ?>lib/flickity/flickity.pkgd.min.js"></script>
 
     <!-- Contact Javascript File -->
     <script src="<?= assets() ?>mail/jqBootstrapValidation.min.js"></script>
