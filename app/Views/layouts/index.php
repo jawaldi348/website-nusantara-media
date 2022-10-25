@@ -12,7 +12,7 @@
     <!-- e: section meta -->
 
     <!-- Favicon -->
-    <link href="<?= assets() ?>img/favicon.ico" rel="icon">
+    <link href="<?= $config['favicon'] ?>" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
