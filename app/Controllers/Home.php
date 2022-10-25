@@ -8,6 +8,6 @@ class Home extends BaseController
     {
         $data['config'] = $this->general->fetch_all('all');
         $data['title'] = $data['config']['sitename'] . ' - ' . $data['config']['sitedescription'];
-        return view('layouts/index', $data);
+        return view('layouts/home', $data);
     }
 }
