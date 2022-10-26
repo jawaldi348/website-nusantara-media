@@ -1,7 +1,7 @@
 <div class="container-fluid p-0 mb-3">
     <nav class="navbar navbar-expand-lg bg-navbar navbar-light py-2 py-lg-0 px-lg-5">
         <a href="<?= site_url() ?>" class="navbar-brand d-block d-lg-none">
-            <img src="<?= $config['logo'] ?>" class="img-fluid">
+            <img src="<?= $config['logo'] ?>" class="img-fluid" alt="<?= $config['sitename'] ?>">
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon">
@@ -13,7 +13,7 @@
                 <li class="d-inline d-lg-none">
                     <div class="nav-wrapper-logo">
                         <a href="<?= site_url() ?>">
-                            <img src="<?= $config['logo'] ?>" class="img-fluid">
+                            <img src="<?= $config['logo'] ?>" class="img-fluid" alt="<?= $config['sitename'] ?>">
                         </a>
                         <div style="padding: 0 0 0 30px">
                             <button data-toggle="collapse" data-target="#navbarCollapse" class="close float-right">
