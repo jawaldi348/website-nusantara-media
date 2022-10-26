@@ -25,25 +25,38 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="<?= site_url() ?>" class="nav-link active">Home</a>
+                </li>
+                <?php $limit_kategori = array_slice($data['dataKategori'], 0, 5);
+                foreach ($limit_kategori as $value) { ?>
+                    <li class="nav-item">
+                        <a href="<?= $value['url'] ?>" class="nav-link"><?= $value['kategori'] ?></a>
+                    </li>
+                <?php } ?>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Foto</a>
                 </li>
                 <li class="nav-item">
-                    <a href="category.html" class="nav-link">Categories</a>
+                    <a href="#" class="nav-link">Video</a>
                 </li>
                 <li class="nav-item">
-                    <a href="single.html" class="nav-link">Single News</a>
+                    <a href="#" class="nav-link">Indeks</a>
                 </li>
+                <?php unset($data['dataKategori'][0]);
+                unset($data['dataKategori'][1]);
+                unset($data['dataKategori'][2]);
+                unset($data['dataKategori'][3]);
+                unset($data['dataKategori'][4]);
+                ?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lainnya</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <?php foreach ($data['dataKategori'] as $value) { ?>
+                            <li>
+                                <a class="dropdown-item" href="<?= $value['url'] ?>"><?= $value['kategori'] ?></a>
+                            </li>
+                        <?php } ?>
+                    </ul>
                 </li>
             </ul>
             <div class="d-none d-lg-block">
