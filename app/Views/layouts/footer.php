@@ -6,7 +6,7 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <a href="<?= site_url() ?>" class="navbar-brand">
                     <h1 class="mb-2 mt-n2 display-5 text-uppercase">
-                        <img src="<?= $config['logo'] ?>" class="img-logo img-fluid">
+                        <img src="<?= $config['logo'] ?>" class="img-logo img-fluid" alt="<?= $config['sitename'] ?>">
                     </h1>
                 </a>
                 <p>
@@ -55,7 +55,7 @@
         </div>
     </div>
     <div class="footer-copyright container-fluid py-4 px-sm-3 px-md-5">
-        <p class="m-0 text-center copyright">
+        <p class="m-0 text-center copyright hover-a">
             &copy; <a class="font-weight-bold" href="<?= site_url() ?>"><?= $config['sitename'] ?></a>. All Rights Reserved.
         </p>
     </div>
