@@ -10,6 +10,7 @@ class Mhome extends Model
     {
         $data['dataKategori'] = $this->fetch_all_kategori();
         $data['dataHeadline'] = $this->fetch_all_content(['headline' => true, 'limit' => 4]);
+        $data['dataTerkini'] = $this->fetch_all_content(['limit' => 6]);
         return $data;
     }
     public function fetch_all_kategori()
@@ -48,6 +49,7 @@ class Mhome extends Model
             $rows = [
                 'title' => $value['title_post'],
                 'slug' => $value['slug_post'],
+                'summary' => $value['summary_post'],
                 'date_publish' => format_singkat($date_publish)
             ];
             $result_kategori = $this->db->table('posts')
@@ -63,16 +65,21 @@ class Mhome extends Model
             $rows['slugKategori'] = $result_kategori['slug_kategori'];
             $rows['urlKategori'] = site_url('category/' . $result_kategori['slug_kategori']);
             $query_main_media = $this->db->table('post_media')
-                ->select('*,post_media.path_media as path_media_post')
+                ->select('*,media.path_media as path,post_media.path_media as path_media_post')
                 ->join('media', 'media.id_media=idmedia_media')
                 ->orderBy('main_media', 'desc')
                 ->getWhere(['idpost_media' => $idpost, 'post_media.type_media' => 'main', 'post_media.status_data' => 1])
                 ->getResultArray();
             $result_main_media = [];
             foreach ($query_main_media as $row_main_media) {
+                // if (isset($array['headline']) == true) :
+                $path_media = getenv('urlassets') . $row_main_media['path_media_post'];
+                // else :
+                //     $path_media = getenv('urlassets') . $row_main_media['path'] . $row_main_media['name_ext_media'] . '_150.' . $row_main_media['ext_media'];
+                // endif;
                 $result_main_media[] = [
                     'title_media' => $row_main_media['title_media'],
-                    'path_media' => getenv('urlassets') . $row_main_media['path_media_post'],
+                    'path_media' => $path_media,
                     'main_media' => $row_main_media['main_media'],
                 ];
             }
