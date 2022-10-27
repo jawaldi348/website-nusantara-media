@@ -98,32 +98,9 @@
     <div class="container py-3">
         <div class="row">
             <div class="col-lg-8">
-                <!-- Headline News Slider Start -->
-                <div class="owl-carousel owl-carousel-2 carousel-item-1 position-relative mb-3">
-                    <div class="position-relative overflow-hidden" style="height: 435px;">
-                        <img class="img-fluid h-100" src="<?= assets() ?>img/news-700x435-1.jpg" style="object-fit: cover;">
-                        <div class="overlay">
-                            <div class="mb-1">
-                                <a class="text-white" href="">Technology</a>
-                                <span class="px-2 text-white">/</span>
-                                <a class="text-white" href="">January 01, 2045</a>
-                            </div>
-                            <a class="h2 m-0 text-white font-weight-bold" href="">Sanctus amet sed amet ipsum lorem. Dolores et erat et elitr sea sed</a>
-                        </div>
-                    </div>
-                    <div class="position-relative overflow-hidden" style="height: 435px;">
-                        <img class="img-fluid h-100" src="<?= assets() ?>img/news-700x435-2.jpg" style="object-fit: cover;">
-                        <div class="overlay">
-                            <div class="mb-1">
-                                <a class="text-white" href="">Technology</a>
-                                <span class="px-2 text-white">/</span>
-                                <a class="text-white" href="">January 01, 2045</a>
-                            </div>
-                            <a class="h2 m-0 text-white font-weight-bold" href="">Sanctus amet sed amet ipsum lorem. Dolores et erat et elitr sea sed</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Headline News Slider End -->
+                <!-- s: section content -->
+                <?= $this->renderSection('content') ?>
+                <!-- e: section content -->
 
                 <div class="row mb-3">
                     <div class="col-12">
