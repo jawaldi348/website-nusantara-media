@@ -9,7 +9,7 @@ class Mhome extends Model
     public function fetch_all()
     {
         $data['dataKategori'] = $this->fetch_all_kategori();
-        $data['dataHeadline'] = $this->fetch_all_content();
+        $data['dataHeadline'] = $this->fetch_all_content(['headline' => true, 'limit' => 4]);
         return $data;
     }
     public function fetch_all_kategori()
@@ -27,13 +27,17 @@ class Mhome extends Model
         }
         return $result;
     }
-    public function fetch_all_content()
+    public function fetch_all_content($array = [])
     {
         $this->builder = $this->db->table('posts');
-        $this->builder->where('status_headline', 1);
+        if (isset($array['headline']) == true) :
+            $this->builder->where('status_headline', 1);
+        endif;
         $this->builder->where(['status_publish' => 'publish', 'status_data' => 1]);
         $this->builder->orderBy('date_publish', 'desc');
-        $this->builder->limit(4);
+        if (isset($array['limit']) > 0) :
+            $this->builder->limit($array['limit']);
+        endif;
         $query = $this->builder->get()->getResultArray();
 
         $result = [];
