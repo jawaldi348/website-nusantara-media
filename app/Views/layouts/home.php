@@ -56,4 +56,58 @@
     <?php } ?>
 </div>
 <!-- Headline News Slider End -->
+<!-- Berita Terkini Start -->
+<div class="row mb-3">
+    <div class="col-12">
+        <h3 class="py-2 mb-3 section-title">
+            <span>Berita Terkini</span>
+        </h3>
+    </div>
+    <div class="col-lg-6">
+        <?php $count = 0;
+        foreach ($data['dataTerkini'] as $terkini) {
+            if ($count >= 1) {
+                echo '</div><div class="col-lg-6">';
+                $count = 0;
+            }
+            $count++;
+        ?>
+            <div class="position-relative mb-3">
+                <div class="article-list-thumb thumb-loading">
+                    <a href="<?= $terkini['url'] ?>" class="article-list-thumb-link flex_ori" title="<?= $terkini['title'] ?>">
+                        <img src="<?= $terkini['mainMedia']['path_media'] ?>" class="img-fluid w-100" alt="<?= $terkini['mainMedia']['title_media'] ?>" style="object-fit: cover;">
+                    </a>
+                </div>
+                <div class="position-relative px-0">
+                    <div class="article-list-info content_center">
+                        <span>
+                            <a href="<?= $terkini['url'] ?>" class="article-list-title" title="<?= $terkini['title'] ?>">
+                                <h2><?= $terkini['title'] ?></h2>
+                            </a>
+                            <a href="<?= $terkini['urlKategori'] ?>" class="article-list-cate content_center" title="<?= $terkini['kategori'] ?>">
+                                <h3><?= $terkini['kategori'] ?></h3>
+                            </a>
+                            <div class="article-list-date content_center">
+                                <span><?= $terkini['date_publish'] ?></span>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="py-2 m-0">
+                        <div class="article-list-desc"><?= $terkini['summary'] ?></div>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-nm btn-block btn-more content_center">
+            <span>
+                <div>Muat Lainnya</div>
+                <i class="fas fa-angle-double-down"></i>
+            </span>
+        </button>
+    </div>
+
+</div>
+<!-- Berita Terkini End -->
 <?= $this->endSection(); ?>
