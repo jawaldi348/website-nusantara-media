@@ -31,3 +31,29 @@
 <meta name="twitter:image:src" content="<?= $config['logo'] ?>">
 <!-- E:tweeter card -->
 <?= $this->endSection(); ?>
+<?= $this->section('content') ?>
+<!-- Headline News Slider Start -->
+<div class="owl-carousel owl-carousel-2 carousel-item-1 position-relative mb-3">
+    <?php foreach ($data['dataHeadline'] as $headline) { ?>
+        <div class="position-relative overflow-hidden thumb-big-carousel-widget media_image" style="height: 435px;">
+            <img class="img-fluid h-100" src="<?= $headline['mainMedia']['path_media'] ?>" style="object-fit: cover;" alt="<?= $headline['mainMedia']['title_media'] ?>">
+            <div class="position-absolute b-0 w-100 bg-lg-shadow">
+                <div class="article-list-info content_center">
+                    <span>
+                        <a title="<?= $headline['title'] ?>" class="article-list-title" href="<?= $headline['url'] ?>">
+                            <h2><?= $headline['title'] ?></h2>
+                        </a>
+                        <a class="article-list-cate content_center" href="<?= $headline['urlKategori'] ?>">
+                            <h3><?= $headline['kategori'] ?></h3>
+                        </a>
+                        <div class="article-list-date content_center">
+                            <span><?= $headline['date_publish'] ?></span>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+</div>
+<!-- Headline News Slider End -->
+<?= $this->endSection(); ?>
