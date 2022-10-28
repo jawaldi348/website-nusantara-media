@@ -23,7 +23,8 @@ class Mhome extends Model
                 'idkategori' => $row['id_kategori'],
                 'kategori' => $row['nama_kategori'],
                 'slug' => $row['slug_kategori'],
-                'url' => site_url('category/' . $row['slug_kategori'])
+                'url' => site_url('category/' . $row['slug_kategori']),
+                'dataContent' => $this->fetch_all_content(['category' => true, 'idcat' => $row['id_kategori'], 'limit' => 6])
             ];
         }
         return $result;
@@ -31,6 +32,11 @@ class Mhome extends Model
     public function fetch_all_content($array = [])
     {
         $this->builder = $this->db->table('posts');
+        if (isset($array['category']) == true) :
+            $this->builder->join('post_kategori', 'id_post=idpost_kategori');
+            $this->builder->join('kategori_path', 'idkategori_kategori=kategori_path');
+            $this->builder->where(['parent_path' => $array['idcat'], 'level_path' => 0]);
+        endif;
         if (isset($array['headline']) == true) :
             $this->builder->where('status_headline', 1);
         endif;
