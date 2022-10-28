@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="<?= assets() ?>lib/flickity/flickity.css" media="screen">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="<?= assets() ?>css/style.css">
+    <link rel="stylesheet" href="<?= assets() ?>css/style.css?v1.15-beta1">
 </head>
 
 <body>
@@ -97,11 +97,9 @@
     <!-- News With Sidebar Start -->
     <div class="container py-3">
         <div class="row">
-            <div class="col-lg-8">
-                <!-- s: section content -->
-                <?= $this->renderSection('content') ?>
-                <!-- e: section content -->
-            </div>
+            <!-- s: section content -->
+            <?= $this->renderSection('content') ?>
+            <!-- e: section content -->
 
             <div class="col-lg-4 pt-3 pt-lg-0">
                 <!-- Ads Start -->
