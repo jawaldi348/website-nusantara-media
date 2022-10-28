@@ -110,4 +110,9 @@
 
 </div>
 <!-- Berita Terkini End -->
+<!-- Ads Start -->
+<div class="my-3 py-3">
+    <a href="#"><img class="img-fluid w-100" src="<?= getenv('urlassets') . 'iklan_manual/jatim2.jpg' ?>" alt=""></a>
+</div>
+<!-- Ads Start -->
 <?= $this->endSection(); ?>
