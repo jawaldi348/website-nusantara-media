@@ -9,6 +9,7 @@ class Mhome extends Model
     public function fetch_all()
     {
         $data['dataKategori'] = $this->fetch_all_kategori();
+        $data['dataTerpopular'] = $this->fetch_all_content(['terpopular' => true, 'limit' => 10]);
         $data['dataHeadline'] = $this->fetch_all_content(['headline' => true, 'limit' => 4]);
         $data['dataTerkini'] = $this->fetch_all_content(['limit' => 6]);
         return $data;
@@ -37,11 +38,18 @@ class Mhome extends Model
             $this->builder->join('kategori_path', 'idkategori_kategori=kategori_path');
             $this->builder->where(['parent_path' => $array['idcat'], 'level_path' => 0]);
         endif;
+        if (isset($array['terpopular']) == true) :
+            $this->builder->where('visit_post >', 0);
+        endif;
         if (isset($array['headline']) == true) :
             $this->builder->where('status_headline', 1);
         endif;
         $this->builder->where(['status_publish' => 'publish', 'status_data' => 1]);
-        $this->builder->orderBy('date_publish', 'desc');
+        if (isset($array['terpopular']) == true) :
+            $this->builder->orderBy('visit_post', 'desc');
+        else :
+            $this->builder->orderBy('date_publish', 'desc');
+        endif;
         if (isset($array['limit']) > 0) :
             $this->builder->limit($array['limit']);
         endif;

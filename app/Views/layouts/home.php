@@ -41,10 +41,10 @@
                 <div class="position-absolute b-0 w-100 bg-lg-shadow">
                     <div class="article-list-info content_center">
                         <span>
-                            <a title="<?= $headline['title'] ?>" class="article-list-title" href="<?= $headline['url'] ?>">
+                            <a class="article-list-title" href="<?= $headline['url'] ?>" alt="<?= $headline['title'] ?>">
                                 <h2><?= $headline['title'] ?></h2>
                             </a>
-                            <a class="article-list-cate content_center" href="<?= $headline['urlKategori'] ?>">
+                            <a class="article-list-cate content_center" href="<?= $headline['urlKategori'] ?>" alt="<?= $headline['kategori'] ?>">
                                 <h3><?= $headline['kategori'] ?></h3>
                             </a>
                             <div class="article-list-date content_center">
@@ -75,17 +75,17 @@
             ?>
                 <div class="position-relative mb-3">
                     <div class="article-list-thumb thumb-loading">
-                        <a href="<?= $terkini['url'] ?>" class="article-list-thumb-link flex_ori" title="<?= $terkini['title'] ?>">
+                        <a href="<?= $terkini['url'] ?>" class="article-list-thumb-link flex_ori" alt="<?= $terkini['title'] ?>">
                             <img src="<?= $terkini['mainMedia']['path_media'] ?>" class="img-fluid w-100" alt="<?= $terkini['mainMedia']['title_media'] ?>" style="object-fit: cover;">
                         </a>
                     </div>
                     <div class="position-relative px-0">
                         <div class="article-list-info content_center">
                             <span>
-                                <a href="<?= $terkini['url'] ?>" class="article-list-title" title="<?= $terkini['title'] ?>">
+                                <a href="<?= $terkini['url'] ?>" class="article-list-title" alt="<?= $terkini['title'] ?>">
                                     <h2><?= $terkini['title'] ?></h2>
                                 </a>
-                                <a href="<?= $terkini['urlKategori'] ?>" class="article-list-cate content_center" title="<?= $terkini['kategori'] ?>">
+                                <a href="<?= $terkini['urlKategori'] ?>" class="article-list-cate content_center" alt="<?= $terkini['kategori'] ?>">
                                     <h3><?= $terkini['kategori'] ?></h3>
                                 </a>
                                 <div class="article-list-date content_center">
@@ -175,4 +175,7 @@
     </div>
     <!-- Category News Slider End -->
 </div>
+<!-- Sidebar Start -->
+<?= $this->include('layouts/sidebar') ?>
+<!-- Sidebar End -->
 <?= $this->endSection(); ?>

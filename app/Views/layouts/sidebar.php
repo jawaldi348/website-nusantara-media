@@ -41,28 +41,30 @@
             <span>Terpopuler</span>
         </h3>
         <div class="sidebar-article article-list-container">
-            <div class="article-list-row">
-                <div class="article-list-thumb">
-                    <a href="#" class="article-list-thumb-link flex_ori" title="#">
-                        <img src="<?= assets() ?>img/news-100x100-3.jpg" class="img-fluid w-100" alt="#" style="object-fit: cover;">
-                    </a>
-                </div>
-                <div class="position-relative px-0">
-                    <div class="article-list-info content_center">
-                        <span>
-                            <a href="#" class="article-list-title" title="#">
-                                <h2>Lorem ipsum dolor sit amet consec adipis elit</h2>
-                            </a>
-                            <a href="#" class="article-list-cate content_center" title="#">
-                                <h3>Technology</h3>
-                            </a>
-                            <div class="article-list-date content_center">
-                                <span>January 01, 2045</span>
-                            </div>
-                        </span>
+            <?php foreach ($data['dataTerpopular'] as $terpopular) { ?>
+                <div class="article-list-row">
+                    <div class="article-list-thumb">
+                        <a href="<?= $terpopular['url'] ?>" class="article-list-thumb-link flex_ori" alt="<?= $terpopular['title'] ?>">
+                            <img src="<?= $terpopular['mainMedia']['path_media'] ?>" class="img-fluid w-100" alt="<?= $terpopular['mainMedia']['title_media'] ?>" style="object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="position-relative px-0">
+                        <div class="article-list-info content_center">
+                            <span>
+                                <a href="<?= $terpopular['url'] ?>" class="article-list-title" alt="<?= $terpopular['title'] ?>">
+                                    <h2><?= $terpopular['title'] ?></h2>
+                                </a>
+                                <a href="<?= $terpopular['urlKategori'] ?>" class="article-list-cate content_center" alt="<?= $terpopular['kategori'] ?>">
+                                    <h3><?= $terpopular['kategori'] ?></h3>
+                                </a>
+                                <div class="article-list-date content_center">
+                                    <span><?= $terpopular['date_publish'] ?></span>
+                                </div>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
         </div>
         <button class="btn btn-nm btn-block btn-more content_center">
             <span>
