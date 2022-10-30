@@ -12,6 +12,7 @@ class Mhome extends Model
         $data['dataTerpopular'] = $this->fetch_all_content(['terpopular' => true, 'limit' => 10]);
         $data['dataHeadline'] = $this->fetch_all_content(['headline' => true, 'limit' => 4]);
         $data['dataTerkini'] = $this->fetch_all_content(['limit' => 6]);
+        $data['dataTagpopuler'] = $this->fetch_all_tags();
         return $data;
     }
     public function fetch_all_kategori()
@@ -101,6 +102,19 @@ class Mhome extends Model
             $key = array_search('1', array_column($rows['dataMainMedia'], 'main_media'));
             $rows['mainMedia'] = $rows['dataMainMedia'][$key];
             $result[] = $rows;
+        }
+        return $result;
+    }
+    public function fetch_all_tags()
+    {
+        $sql = $this->db->table('tags')->limit(9)->orderBy('RAND()')->get()->getResultArray();
+        $result = [];
+        foreach ($sql as $row_tagpopuler) {
+            $result[] = [
+                'tag' => $row_tagpopuler['nama_tags'],
+                'slug' => $row_tagpopuler['slug_tags'],
+                'url' => site_url('tags/' . $row_tagpopuler['slug_tags'])
+            ];
         }
         return $result;
     }

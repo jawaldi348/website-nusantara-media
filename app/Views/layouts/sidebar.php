@@ -83,22 +83,15 @@
 
     <!-- Tags Start -->
     <div class="pb-3">
-        <div class="bg-light py-2 px-4 mb-3">
-            <h3 class="m-0">Tags</h3>
-        </div>
+        <h3 class="py-2 section-title">
+            <span>Tags</span>
+        </h3>
         <div class="d-flex flex-wrap m-n1">
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Sports</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Technology</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Entertainment</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">Lifestyle</a>
+            <ul class="tags-links tagcloud ps-0">
+                <?php foreach ($data['dataTagpopuler'] as $tagpopuler) { ?>
+                    <li><a href="<?= $tagpopuler['url'] ?>" title="<?= $tagpopuler['tag'] ?>"><?= $tagpopuler['tag'] ?></a></li>
+                <?php } ?>
+            </ul>
         </div>
     </div>
     <!-- Tags End -->
