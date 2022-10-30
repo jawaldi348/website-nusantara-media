@@ -91,6 +91,66 @@ class Visitor
             endif;
         endif;
     }
+    function track_visitor_content($idpost, $jenis)
+    {
+        $proceed = TRUE;
+
+        if ($this->IGNORE_SEARCH_BOTS && $this->is_bot()) {
+            $proceed = FALSE;
+        }
+
+        if ($this->HONOR_DO_NOT_TRACK && !allow_tracking()) {
+            $proceed = FALSE;
+        }
+
+        if ($proceed === TRUE) {
+            $session = session();
+            $idsess = $session->session_id;
+
+            $sql = $this->db->table('post_visitor')
+                ->orderBy('id_post_visitor', 'desc')
+                ->getWhere(['idpost_visitor' => $idpost, 'idsess_user' => $idsess])
+                ->getRowArray();
+            $sql_post = $this->db->table('posts')->getWhere(['id_post' => $idpost])->getRowArray();
+            if (isset($sql)) :
+                if (time() - strtotime($sql['created_at']) > 60) :
+                    $data = array(
+                        'idpost_visitor' => $idpost,
+                        'ip_address' => $this->request->getIPAddress(),
+                        'idsess_user' => $idsess,
+                        'requested_url' => $this->request->uri,
+                        'referer_page' => $this->request->getUserAgent()->getReferrer(),
+                        'jenis_post' => $jenis,
+                        'created_at' => date('Y-m-d H:i:s')
+                    );
+                    $this->db->table('post_visitor')->insert($data);
+                    if (isset($sql_post)) :
+                        $post = array(
+                            'visit_post' => $sql_post['visit_post'] + 1,
+                        );
+                        $this->db->table('posts')->where('id_post', $idpost)->update($post);
+                    endif;
+                endif;
+            else :
+                $data = array(
+                    'idpost_visitor' => $idpost,
+                    'ip_address' => $this->request->getIPAddress(),
+                    'idsess_user' => $idsess,
+                    'requested_url' => $this->request->uri,
+                    'referer_page' => $this->request->getUserAgent()->getReferrer(),
+                    'jenis_post' => $jenis,
+                    'created_at' => date('Y-m-d H:i:s')
+                );
+                $this->db->table('post_visitor')->insert($data);
+                if (isset($sql_post)) :
+                    $post = array(
+                        'visit_post' => $sql_post['visit_post'] + 1,
+                    );
+                    $this->db->table('posts')->where('id_post', $idpost)->update($post);
+                endif;
+            endif;
+        }
+    }
 
     /**
      * check whether bot
