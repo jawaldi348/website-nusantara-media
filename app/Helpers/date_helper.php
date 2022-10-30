@@ -201,6 +201,14 @@ if (!function_exists('format_tglen_timestamp')) {
     }
 }
 
+if (!function_exists('time_timestamp')) {
+    function time_timestamp($time)
+    {
+        $value = substr($time, 0, -3);
+        return $value;
+    }
+}
+
 if (!function_exists('tanggal_indo_day')) {
     function tanggal_indo_day($tanggal, $cetak_hari = false)
     {
