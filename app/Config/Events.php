@@ -4,6 +4,7 @@ namespace Config;
 
 use CodeIgniter\Events\Events;
 use CodeIgniter\Exceptions\FrameworkException;
+use App\Libraries\VisitorTes;
 
 /*
  * --------------------------------------------------------------------
@@ -41,8 +42,11 @@ Events::on('pre_system', static function () {
      * --------------------------------------------------------------------
      * If you delete, they will no longer be collected.
      */
-    if (CI_DEBUG && ! is_cli()) {
+    if (CI_DEBUG && !is_cli()) {
         Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
         Services::toolbar()->respond();
     }
 });
+
+$visitorTes = new VisitorTes();
+Events::on('post_controller_constructor', [$visitorTes, 'track_visitor']);
