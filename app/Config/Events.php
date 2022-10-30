@@ -5,6 +5,7 @@ namespace Config;
 use CodeIgniter\Events\Events;
 use CodeIgniter\Exceptions\FrameworkException;
 use App\Libraries\VisitorTes;
+use App\Libraries\Visitor;
 
 /*
  * --------------------------------------------------------------------
@@ -50,3 +51,6 @@ Events::on('pre_system', static function () {
 
 $visitorTes = new VisitorTes();
 Events::on('post_controller_constructor', [$visitorTes, 'track_visitor']);
+
+$visitor = new Visitor();
+Events::on('post_controller_constructor', [$visitor, 'track_visitor']);
