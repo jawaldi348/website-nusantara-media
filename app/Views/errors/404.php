@@ -1,105 +1,37 @@
 <?= $this->extend('layouts/index') ?>
+<?= $this->section('tagmeta') ?>
+<meta name="description" content="<?= $config['sitedescription'] ?>">
+<meta name="keywords" content="<?= $config['sitedescription'] ?>">
+<meta name="news_keywords" content="<?= $config['sitedescription'] ?>">
+
+<meta name="language" content="id">
+<meta name="geo.country" content="id">
+<meta http-equiv="content-language" content="In-Id">
+<meta name="geo.placename" content="Indonesia">
+<meta name="theme-color" content="#5da5e0">
+<!-- s: fb meta -->
+<meta property="fb:app_id" content="">
+<meta property="fb:pages" content="">
+<meta property="og:title" content="<?= $title ?>">
+<meta property="og:description" content="<?= $config['sitedescription'] ?>">
+<meta property="og:type" content="article">
+<meta property="og:url" content="<?= $config['site_domain'] ?>">
+<meta property="og:image" content="<?= $config['logo'] ?>">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="457">
+<meta property="og:image:height" content="100">
+<meta property="og:site_name" content="<?= $config['domainname'] ?>">
+<!-- e: fb meta -->
+<!-- S:tweeter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="<?= $config['domainname'] ?>">
+<meta name="twitter:title" content="<?= $title ?>">
+<meta name="twitter:description" content="<?= $config['sitedescription'] ?>">
+<meta name="twitter:image" content="<?= $config['logo'] ?>">
+<meta name="twitter:image:src" content="<?= $config['logo'] ?>">
+<!-- E:tweeter card -->
+<?= $this->endSection(); ?>
 <?= $this->section('content') ?>
-<style>
-    .error-img>span {
-        width: 100%;
-        max-width: 480px;
-    }
-
-    .flex_ori img {
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .flex_ori>img {
-        opacity: 0;
-        transition: opacity 1000ms;
-    }
-
-    .flex_ori>img.lazyloaded {
-        opacity: 1;
-    }
-
-    .error-number {
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        font-size: 12vw;
-        color: #616161;
-    }
-
-    @media screen and (min-width: 480px) {
-        .error-number {
-            font-size: 64px;
-        }
-    }
-
-    .error-img>span:after {
-        content: '';
-        display: block;
-        padding-top: 75%;
-    }
-
-    .error-label,
-    .error-desc {
-        text-align: center;
-        margin: 0 15px;
-    }
-
-    .error-label {
-        font-weight: 900;
-        font-size: 36px;
-        text-transform: uppercase;
-        color: #e9ecef;
-    }
-
-    .error-desc {
-        font-weight: 400 !important;
-        font-size: 16px;
-        margin: 5px 0 30px;
-        color: #dee2e6;
-    }
-
-    .p404__link {
-        color: #fff;
-    }
-
-    .p404__link {
-        display: block;
-    }
-
-    .p404__link {
-        text-align: center;
-    }
-
-    .p404__link {
-        width: 150px;
-        margin: 0 auto;
-        padding: 10px 0;
-        border-radius: 5px;
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: 600;
-        -webkit-transition: all .2s ease;
-        -moz-transition: all .2s ease;
-        -ms-transition: all .2s ease;
-        -o-transition: all .2s ease;
-        transition: all .2s ease;
-        /* background: #5f2eea; */
-    }
-
-    /* .p404__link {
-        background: #ff914c;
-    } */
-</style>
 <div class="container">
     <div class="error-img content_center">
         <span class="flex_ori">
@@ -109,6 +41,6 @@
     </div>
     <h1 class="error-label">Halaman Tidak Ditemukan</h1>
     <h2 class="error-desc">Maaf, halaman yang anda cari tidak tersedia atau sudah dipindahkan.</h2>
-    <a href="javascript:void(0)" onclick="window.history.go(-1); return false;" class="p404__link btn btn-nm">Kembali</a>
+    <a href="javascript:void(0)" onclick="window.history.go(-1); return false;" class="error-link btn btn-nm">Kembali</a>
 </div>
 <?= $this->endSection(); ?>
