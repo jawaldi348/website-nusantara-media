@@ -18,6 +18,10 @@ class Posts extends BaseController
         $data['config'] = $this->general->fetch_all('all');
         $data['read'] = $this->Mpost->detail($data['config'], $kategori, $tanggal, $idpost, $slug);
         $data['title'] = $data['read']['titleHead'];
-        return view('post/read', $data);
+        if ($data['read']['status'] == true) :
+            return view('post/read', $data);
+        else :
+            return redirect()->to(site_url('errors/show404'));
+        endif;
     }
 }
