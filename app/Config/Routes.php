@@ -35,9 +35,11 @@ $routes->set404Override('App\Controllers\Errors::show404');
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index', ['filter' => 'checkMaintenance']);
 
-$routes->get('read/(:any)/(:any)/(:any)/(:any)', 'Posts::read/$1/$2/$3/$4');
+$routes->get('read/(:any)/(:any)/(:any)/(:any)', 'Posts::read/$1/$2/$3/$4', ['filter' => 'checkMaintenance']);
+
+$routes->get('maintenance', 'Errors::maintenance');
 
 /*
  * --------------------------------------------------------------------

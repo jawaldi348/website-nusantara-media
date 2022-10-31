@@ -16,4 +16,12 @@ class Errors extends BaseController
         $data['title'] = $data['config']['sitename'] . ' - ' . $data['config']['sitedescription'];
         return view('errors/404', $data);
     }
+    public function maintenance()
+    {
+        if (getenv('maintenance') == '0') {
+            return redirect()->route('/');
+        } else {
+            return view('errors/maintenance');
+        }
+    }
 }
