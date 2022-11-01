@@ -79,7 +79,7 @@
                 </div>
             </div>
             <!-- Headline News Slider End -->
-            <!-- Berita Terkini Start -->
+            <!-- List Content Start -->
             <div class="row mb-3">
                 <div class="col-12">
                     <h3 class="py-2 mb-3 section-title">
@@ -132,6 +132,7 @@
                     </button>
                 </div>
             </div>
+            <!-- List Content Start -->
         </div>
         <!-- Sidebar Start -->
         <?= $this->include('layouts/sidebar') ?>
