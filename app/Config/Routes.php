@@ -39,6 +39,8 @@ $routes->get('/', 'Home::index', ['filter' => 'checkMaintenance']);
 
 $routes->get('read/(:any)/(:any)/(:any)/(:any)', 'Posts::read/$1/$2/$3/$4', ['filter' => 'checkMaintenance']);
 
+$routes->get('category/(:any)', 'Kategori::index/$1');
+
 $routes->get('maintenance', 'Errors::maintenance');
 
 /*
