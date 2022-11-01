@@ -139,4 +139,5 @@
         <!-- Sidebar End -->
     </div>
 </div>
+<!-- News With Sidebar End -->
 <?= $this->endSection(); ?>
