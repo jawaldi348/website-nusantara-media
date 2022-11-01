@@ -37,7 +37,7 @@
                     <li class="nav-item"><a class="nav-link pt-0" href="<?= site_url('about-us') ?>">» Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link pt-0" href="<?= site_url('pedoman-media-siber') ?>">» Pedoman Media Siber</a></li>
                     <li class="nav-item"><a class="nav-link pt-0" href="#">» Kebijakan Privasi</a></li>
-                    <li class="nav-item"><a class="nav-link pt-0" href="#">» Site Map</a></li>
+                    <li class="nav-item"><a class="nav-link pt-0" href="<?= site_url('sitemap') ?>">» Site Map</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">

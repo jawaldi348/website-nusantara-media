@@ -29,4 +29,11 @@ class Page extends BaseController
         $data['title'] = 'Pedoman Media Siber - ' . $data['config']['sitename'];
         return view('pages/pedoman', $data);
     }
+    public function sitemap()
+    {
+        $data['data'] = $this->Mhome->fetch_all();
+        $data['config'] = $this->general->fetch_all('all');
+        $data['title'] = 'Site Map - ' . $data['config']['sitename'];
+        return view('pages/sitemap', $data);
+    }
 }
