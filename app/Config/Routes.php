@@ -42,6 +42,8 @@ $routes->get('read/(:any)/(:any)/(:any)/(:any)', 'Posts::read/$1/$2/$3/$4', ['fi
 $routes->get('category/(:any)', 'Kategori::index/$1', ['filter' => 'checkMaintenance']);
 $routes->get('tag/(:any)', 'Tags::index/$1', ['filter' => 'checkMaintenance']);
 
+$routes->get('contact', 'Page::contact');
+
 $routes->get('maintenance', 'Errors::maintenance');
 
 /*
