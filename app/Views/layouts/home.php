@@ -140,7 +140,6 @@
                         </span>
                     </button>
                 </div>
-
             </div>
             <!-- Berita Terkini End -->
             <!-- Ads Start -->
