@@ -25,7 +25,7 @@
                 <h4 class="font-weight-bold mb-4">Kategori</h4>
                 <div class="d-flex flex-wrap m-n1">
                     <?php foreach ($data['dataKategori'] as $kategori) { ?>
-                        <a href="<?= site_url($kategori['slug']) ?>" class="btn btn-sm btn-outline-secondary m-1" title="<?= $kategori['kategori'] ?>"><?= $kategori['kategori'] ?></a>
+                        <a href="<?= site_url($kategori['url']) ?>" class="btn btn-sm btn-outline-secondary m-1" title="<?= $kategori['kategori'] ?>"><?= $kategori['kategori'] ?></a>
                     <?php } ?>
                 </div>
             </div>
