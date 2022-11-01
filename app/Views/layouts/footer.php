@@ -34,7 +34,7 @@
                 <ul class="nav flex-column hover-a">
                     <li class="nav-item"><a class="nav-link pt-0" href="#">» Redaksi</a></li>
                     <li class="nav-item"><a class="nav-link pt-0" href="<?= site_url('contact') ?>">» Kontak</a></li>
-                    <li class="nav-item"><a class="nav-link pt-0" href="#">» Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link pt-0" href="<?= site_url('about-us') ?>">» Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link pt-0" href="#">» Pedoman Media Siber</a></li>
                     <li class="nav-item"><a class="nav-link pt-0" href="#">» Kebijakan Privasi</a></li>
                     <li class="nav-item"><a class="nav-link pt-0" href="#">» Site Map</a></li>

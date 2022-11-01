@@ -43,6 +43,7 @@ $routes->get('category/(:any)', 'Kategori::index/$1', ['filter' => 'checkMainten
 $routes->get('tag/(:any)', 'Tags::index/$1', ['filter' => 'checkMaintenance']);
 
 $routes->get('contact', 'Page::contact');
+$routes->get('about-us', 'Page::about');
 
 $routes->get('maintenance', 'Errors::maintenance');
 

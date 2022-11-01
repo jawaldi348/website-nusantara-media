@@ -15,4 +15,11 @@ class Page extends BaseController
         $data['title'] = 'Kontak Kami - ' . $data['config']['sitename'];
         return view('pages/contact', $data);
     }
+    public function about()
+    {
+        $data['data'] = $this->Mhome->fetch_all();
+        $data['config'] = $this->general->fetch_all('all');
+        $data['title'] = 'Tentang Kami - ' . $data['config']['sitename'];
+        return view('pages/about', $data);
+    }
 }
