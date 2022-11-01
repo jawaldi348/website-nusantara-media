@@ -112,7 +112,7 @@ class Mpost extends Model
                 $result_tags[] = [
                     'tag' => $row_tags['nama_tags'],
                     'slug' => $row_tags['tag_post'],
-                    'url' => site_url('tags/' . $row_tags['tag_post'])
+                    'url' => site_url('tag/' . $row_tags['tag_post'])
                 ];
             }
             $data['dataTags'] = $result_tags;
