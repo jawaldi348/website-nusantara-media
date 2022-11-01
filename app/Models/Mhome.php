@@ -39,6 +39,10 @@ class Mhome extends Model
             $this->builder->join('kategori_path', 'idkategori_kategori=kategori_path');
             $this->builder->where(['parent_path' => $array['idcat'], 'level_path' => 0]);
         endif;
+        if (isset($array['tags']) == true) :
+            $this->builder->join('post_tags', 'idpost_tags=id_post');
+            $this->builder->where('slug_tags', $array['slug']);
+        endif;
         if (isset($array['terpopular']) == true) :
             $this->builder->where('visit_post >', 0);
         endif;
@@ -113,7 +117,7 @@ class Mhome extends Model
             $result[] = [
                 'tag' => $row_tagpopuler['nama_tags'],
                 'slug' => $row_tagpopuler['slug_tags'],
-                'url' => site_url('tags/' . $row_tagpopuler['slug_tags'])
+                'url' => site_url('tag/' . $row_tagpopuler['slug_tags'])
             ];
         }
         return $result;
