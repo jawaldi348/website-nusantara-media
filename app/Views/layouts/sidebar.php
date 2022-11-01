@@ -1,8 +1,6 @@
 <div class="col-lg-4 pt-3 pt-lg-0">
     <!-- Ads Start -->
-    <div class="pb-3">
-        <a href="#"><img class="img-fluid w-100" src="<?= assets() ?>img/news-500x280-4.jpg" alt=""></a>
-    </div>
+    <a href="#"><img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/sumbar1.jpg' ?>" alt=""></a>
     <!-- Ads End -->
 
     <!-- Social Follow Start -->
@@ -30,9 +28,9 @@
     <!-- Social Follow End -->
 
     <!-- Ads Start -->
-    <div class="pb-3">
-        <a href=""><img class="img-fluid" src="<?= assets() ?>img/news-500x280-4.jpg" alt=""></a>
-    </div>
+    <!-- <div class="pb-3">
+        <a href=""><img class="img-fluid" src="img/news-500x280-4.jpg" alt=""></a>
+    </div> -->
     <!-- Ads End -->
 
     <!-- Popular News Start -->
@@ -77,7 +75,7 @@
 
     <!-- Ads Start -->
     <div class="pb-3">
-        <a href=""><img class="img-fluid" src="<?= assets() ?>img/news-500x280-4.jpg" alt=""></a>
+        <a href="#"><img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/jatim1.jpg' ?>" alt=""></a>
     </div>
     <!-- Ads End -->
 

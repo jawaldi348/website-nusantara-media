@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="col-lg-8 text-center text-lg-right">
-            <img class="img-fluid" src="<?= assets() ?>img/ads-700x70.jpg" alt="<?= $config['sitename'] ?>">
+            <img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/sumbar2.jpg' ?>" alt="">
         </div>
     </div>
 </div>
