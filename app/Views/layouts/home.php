@@ -194,12 +194,12 @@
                             <?php } ?>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-nm btn-block btn-more content_center">
+                            <a href="<?= $kategori['url'] ?>" class="btn btn-nm btn-block btn-more content_center mb-4">
                                 <span>
                                     <div>Selengkapnya</div>
                                     <i class="fas fa-angle-double-right"></i>
                                 </span>
-                            </button>
+                            </a>
                         </div>
                 <?php }
                 } ?>
