@@ -8,6 +8,13 @@ class Page extends BaseController
     {
         $this->Mhome = new \App\Models\Mhome();
     }
+    public function redaksi()
+    {
+        $data['data'] = $this->Mhome->fetch_all();
+        $data['config'] = $this->general->fetch_all('all');
+        $data['title'] = 'Redaksi - ' . $data['config']['sitename'];
+        return view('pages/redaksi', $data);
+    }
     public function contact()
     {
         $data['data'] = $this->Mhome->fetch_all();

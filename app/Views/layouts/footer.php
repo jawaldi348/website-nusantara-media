@@ -32,7 +32,7 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="font-weight-bold mb-4">Informasi</h4>
                 <ul class="nav flex-column hover-a">
-                    <li class="nav-item"><a class="nav-link pt-0" href="#">» Redaksi</a></li>
+                    <li class="nav-item"><a class="nav-link pt-0" href="<?= site_url('redaksi') ?>">» Redaksi</a></li>
                     <li class="nav-item"><a class="nav-link pt-0" href="<?= site_url('contact') ?>">» Kontak</a></li>
                     <li class="nav-item"><a class="nav-link pt-0" href="<?= site_url('about-us') ?>">» Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link pt-0" href="<?= site_url('pedoman-media-siber') ?>">» Pedoman Media Siber</a></li>
