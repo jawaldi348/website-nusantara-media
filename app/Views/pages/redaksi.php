@@ -61,7 +61,7 @@
                 <div class="style-list left">
                     <h5>Penasehat Hukum</h5>
                     <ul>
-                        <li><i class="fa fa-user"></i> Dr. Suharisal, S.H., M.H., CMED., CLA</li>
+                        <li><i class="fa fa-user"></i> Dr. Suharizal, S.H., M.H., CMED., CLA</li>
                     </ul>
                     <h5>Pemimpin Redaksi</h5>
                     <ul>
