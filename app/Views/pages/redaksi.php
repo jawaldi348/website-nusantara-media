@@ -86,10 +86,11 @@
                         <li><i class="fa fa-user"></i> Darlinsah</li>
                         <li><i class="fa fa-user"></i> Icuk RZ</li>
                         <li><i class="fa fa-user"></i> Ahmad Husein</li>
-                        <li><i class="fa fa-user"></i> Nuzul RamadanaZulkifli</li>
+                        <li><i class="fa fa-user"></i> Nuzul Ramadana Zulkifli</li>
                         <li><i class="fa fa-user"></i> Hendra Jetri</li>
                         <li><i class="fa fa-user"></i> Lisa Oktafiyani</li>
                         <li><i class="fa fa-user"></i> Alfa Rezi</li>
+                        <li><i class="fa fa-user"></i> Arman</li>
                     </ul>
                     <h5>IT Redaksi</h5>
                     <ul>
