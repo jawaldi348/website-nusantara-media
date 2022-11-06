@@ -91,6 +91,9 @@
                         <li><i class="fa fa-user"></i> Lisa Oktafiyani</li>
                         <li><i class="fa fa-user"></i> Alfa Rezi</li>
                         <li><i class="fa fa-user"></i> Arman</li>
+                        <li><i class="fa fa-user"></i> Idham Chalik</li>
+                        <li><i class="fa fa-user"></i> Berlian Novallinli>
+                        <li><i class="fa fa-user"></i> Jawaldi</li>
                     </ul>
                     <h5>IT Redaksi</h5>
                     <ul>
