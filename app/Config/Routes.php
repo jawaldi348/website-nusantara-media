@@ -42,6 +42,7 @@ $routes->post('request/load-more', 'Posts::load_more');
 
 $routes->get('category/(:any)', 'Kategori::index/$1', ['filter' => 'checkMaintenance']);
 $routes->get('tag/(:any)', 'Tags::index/$1', ['filter' => 'checkMaintenance']);
+$routes->get('indeks', 'Indeks::index');
 
 $routes->get('redaksi', 'Page::redaksi');
 $routes->get('contact', 'Page::contact');

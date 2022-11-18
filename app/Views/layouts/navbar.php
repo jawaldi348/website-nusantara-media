@@ -40,7 +40,7 @@
                     <a href="#" class="nav-link">Video</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Indeks</a>
+                    <a href="<?= site_url('indeks') ?>" class="nav-link">Indeks</a>
                 </li>
                 <?php unset($data['dataKategori'][0]);
                 unset($data['dataKategori'][1]);

@@ -218,7 +218,7 @@
 <script>
     window.last_publish_date = getDateTime().setup();
 
-    var btn_replace = "<a class='btn btn-nm btn-block btn-more content_center' href='#'>";
+    var btn_replace = "<a class='btn btn-nm btn-block btn-more content_center' href='" + BASE_URL + 'indeks' + "'>";
     btn_replace += "<span><div>Indeks</div><i class='fas fa-angle-double-right'></i></span>";
     btn_replace += "</a>";
     load_more().setup({
