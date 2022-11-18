@@ -11,7 +11,7 @@ class Mhome extends Model
         $data['dataKategori'] = $this->fetch_all_kategori();
         $data['dataTerpopular'] = $this->fetch_all_content(['terpopular' => true, 'limit' => 10]);
         $data['dataHeadline'] = $this->fetch_all_content(['headline' => true, 'limit' => 4]);
-        $data['dataTerkini'] = $this->fetch_all_content(['limit' => 6]);
+        $data['dataTerkini'] = $this->fetch_all_content(['limit' => 6, 'start' => 0]);
         $data['dataTagpopuler'] = $this->fetch_all_tags();
         return $data;
     }
@@ -55,9 +55,8 @@ class Mhome extends Model
         else :
             $this->builder->orderBy('date_publish', 'desc');
         endif;
-        if (isset($array['limit']) > 0) :
-            $this->builder->limit($array['limit']);
-        endif;
+        $start = isset($array['start']) ? $array['start'] : 0;
+        $this->builder->limit($array['limit'], $start);
         $query = $this->builder->get()->getResultArray();
 
         $result = [];
