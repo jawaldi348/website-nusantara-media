@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="<?= assets() ?>lib/flickity/flickity.css" media="screen">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="<?= assets() ?>css/style.css">
+    <link rel="stylesheet" href="<?= assets() ?>css/style.css?v1.19-beta1">
     <!-- s: section style -->
     <?= $this->renderSection('style') ?>
     <!-- e: section style -->
@@ -74,6 +74,9 @@
 
     <!-- Template Javascript -->
     <script src="<?= assets() ?>js/main.js"></script>
+    <script>
+        var BASE_URL = "<?= site_url(); ?>";
+    </script>
     <!-- s: section style -->
     <?= $this->renderSection('script') ?>
     <!-- e: section style -->
