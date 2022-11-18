@@ -30,6 +30,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="<?= assets() ?>css/style.css">
+    <!-- s: section style -->
+    <?= $this->renderSection('style') ?>
+    <!-- e: section style -->
 </head>
 
 <body>
@@ -71,6 +74,9 @@
 
     <!-- Template Javascript -->
     <script src="<?= assets() ?>js/main.js"></script>
+    <!-- s: section style -->
+    <?= $this->renderSection('script') ?>
+    <!-- e: section style -->
 </body>
 
 </html>
