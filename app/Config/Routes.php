@@ -38,6 +38,7 @@ $routes->set404Override('App\Controllers\Errors::show404');
 $routes->get('/', 'Home::index', ['filter' => 'checkMaintenance']);
 
 $routes->get('read/(:any)/(:any)/(:any)/(:any)', 'Posts::read/$1/$2/$3/$4', ['filter' => 'checkMaintenance']);
+$routes->post('request/load-more', 'Posts::load_more');
 
 $routes->get('category/(:any)', 'Kategori::index/$1', ['filter' => 'checkMaintenance']);
 $routes->get('tag/(:any)', 'Tags::index/$1', ['filter' => 'checkMaintenance']);
