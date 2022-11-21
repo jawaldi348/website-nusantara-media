@@ -16,7 +16,7 @@
                 </svg>
             </a>
             <div id="search-dropdown-container" class="search-dropdown search">
-                <form method="get" class="nm-searchform searchform" action="#">
+                <form method="get" class="nm-searchform searchform" action="<?= site_url('search') ?>">
                     <input type="text" name="search" id="search" placeholder="Cari berita disini...">
                     <button type="submit" class="nm-search-submit nm-search-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
                 </li>
             </ul>
             <div class="d-none d-lg-block">
-                <form method="get" class="nm-searchform" action="#">
+                <form method="get" class="nm-searchform" action="<?= site_url('search') ?>">
                     <input type="text" name="search" id="search" placeholder="Cari berita disini...">
                     <button type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">

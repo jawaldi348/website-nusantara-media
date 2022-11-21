@@ -49,9 +49,14 @@ class Mhome extends Model
         if (isset($array['headline']) == true) :
             $this->builder->where('status_headline', 1);
         endif;
+        if (isset($array['formSearch']) == true) :
+            $this->builder->like('slug_post', $array['search']);
+        endif;
         $this->builder->where(['status_publish' => 'publish', 'status_data' => 1]);
         if (isset($array['terpopular']) == true) :
             $this->builder->orderBy('visit_post', 'desc');
+        elseif (isset($array['random']) == true) :
+            $this->builder->orderBy('RAND()');
         else :
             $this->builder->orderBy('date_publish', 'desc');
         endif;

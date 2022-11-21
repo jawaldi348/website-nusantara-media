@@ -44,6 +44,8 @@ $routes->get('category/(:any)', 'Kategori::index/$1', ['filter' => 'checkMainten
 $routes->get('tag/(:any)', 'Tags::index/$1', ['filter' => 'checkMaintenance']);
 $routes->get('indeks', 'Indeks::index');
 
+$routes->get('search', 'Search::index');
+
 $routes->get('redaksi', 'Page::redaksi');
 $routes->get('contact', 'Page::contact');
 $routes->get('about-us', 'Page::about');
