@@ -1,13 +1,32 @@
 <div class="container-fluid p-0 mb-3">
     <nav class="navbar navbar-expand-lg bg-navbar navbar-light py-2 py-lg-0 px-lg-5">
-        <a href="<?= site_url() ?>" class="navbar-brand d-block d-lg-none">
-            <img src="<?= $config['logo'] ?>" class="img-fluid" alt="<?= $config['sitename'] ?>">
-        </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon">
                 <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
             </span>
         </button>
+        <a href="<?= site_url() ?>" class="navbar-brand d-block d-lg-none">
+            <img src="<?= $config['logo'] ?>" class="img-fluid" alt="<?= $config['sitename'] ?>">
+        </a>
+        <div class="nm-search-btn">
+            <a id="search-menu-button" class="topnav-button nm-search-icon" href="#" rel="nofollow">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6z"></path>
+                    <path fill="currentColor" d="M11.412 8.586c.379.38.588.882.588 1.414h2a3.977 3.977 0 0 0-1.174-2.828c-1.514-1.512-4.139-1.512-5.652 0l1.412 1.416c.76-.758 2.07-.756 2.826-.002z"></path>
+                </svg>
+            </a>
+            <div id="search-dropdown-container" class="search-dropdown search">
+                <form method="get" class="nm-searchform searchform" action="#">
+                    <input type="text" name="search" id="search" placeholder="Cari berita disini...">
+                    <button type="submit" class="nm-search-submit nm-search-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6z"></path>
+                            <path fill="currentColor" d="M11.412 8.586c.379.38.588.882.588 1.414h2a3.977 3.977 0 0 0-1.174-2.828c-1.514-1.512-4.139-1.512-5.652 0l1.412 1.416c.76-.758 2.07-.756 2.826-.002z"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <ul class="navbar-nav bg-navbar mr-auto py-0">
                 <li class="d-inline d-lg-none">
@@ -60,8 +79,8 @@
                 </li>
             </ul>
             <div class="d-none d-lg-block">
-                <form method="post" class="nm-searchform" action="#" autocomplete="off">
-                    <input type="text" name="search" id="search" placeholder="Cari">
+                <form method="get" class="nm-searchform" action="#">
+                    <input type="text" name="search" id="search" placeholder="Cari berita disini...">
                     <button type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396l1.414-1.414l-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8s3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6s-6-2.691-6-6s2.691-6 6-6z"></path>
