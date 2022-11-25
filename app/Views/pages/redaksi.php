@@ -86,7 +86,7 @@
                         <li><i class="fa fa-user"></i> Sofyan Hidayatullah</li>
                         <li><i class="fa fa-user"></i> Abrol Huda</li>
                         <li><i class="fa fa-user"></i> Ahmad Adha</li>
-                        <li><i class="fa fa-user"></i> Rahmad Saleh</li>
+                        <li><i class="fa fa-user"></i> Rahmat Saleh</li>
                     </ul>
                     <h5>Tim Liputan</h5>
                     <ul>
