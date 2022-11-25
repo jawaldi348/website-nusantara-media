@@ -78,7 +78,6 @@
                     <h5>Reporter</h5>
                     <ul>
                         <li><i class="fa fa-user"></i> Nuzul Ramadana</li>
-                        <li><i class="fa fa-user"></i> Zulkifli</li>
                         <li><i class="fa fa-user"></i> Hendra Jetri</li>
                         <li><i class="fa fa-user"></i> Alfa Rezi</li>
                         <li><i class="fa fa-user"></i> Arman</li>
@@ -87,21 +86,18 @@
                         <li><i class="fa fa-user"></i> Sofyan Hidayatullah</li>
                         <li><i class="fa fa-user"></i> Abrol Huda</li>
                         <li><i class="fa fa-user"></i> Ahmad Adha</li>
+                        <li><i class="fa fa-user"></i> Rahmad Saleh</li>
                     </ul>
                     <h5>Tim Liputan</h5>
                     <ul>
                         <li><i class="fa fa-user"></i> Darlinsah</li>
-                        <li><i class="fa fa-user"></i> Icuk RZ</li>
                         <li><i class="fa fa-user"></i> Ahmad Husein</li>
-                        <li><i class="fa fa-user"></i> Idham Chalik</li>
-                        <li><i class="fa fa-user"></i> Nuzul Ramadana</li>
-                        <li><i class="fa fa-user"></i> Zulkifli</li>
-                        <li><i class="fa fa-user"></i> Hendra Jetri</li>
-                        <li><i class="fa fa-user"></i> Lisa Oktafiyani</li>
-                        <li><i class="fa fa-user"></i> Alfa Rezi</li>
-                        <li><i class="fa fa-user"></i> Arman</li>
+                        <li><i class="fa fa-user"></i> Icuk RZ</li>
                         <li><i class="fa fa-user"></i> Berlian Novallino</li>
                         <li><i class="fa fa-user"></i> Jawaldi</li>
+                        <li><i class="fa fa-user"></i> Lisa Oktafiyani</li>
+                        <li><i class="fa fa-user"></i> Idham Chalik</li>
+                        <li><i class="fa fa-user"></i> Zulkifli</li>
                     </ul>
                     <h5>IT Redaksi</h5>
                     <ul>
