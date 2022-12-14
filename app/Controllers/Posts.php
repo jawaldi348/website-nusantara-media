@@ -10,6 +10,7 @@ class Posts extends BaseController
 
         $this->Mhome = new \App\Models\Mhome();
         $this->Mpost = new \App\Models\Mpost();
+        $this->Mkategori = new \App\Models\Mkategori();
     }
     public function read($kategori, $tanggal, $idpost, $slug)
     {
@@ -27,7 +28,17 @@ class Posts extends BaseController
     public function load_more()
     {
         $post = $this->request->getPost();
-        $sql = $this->Mhome->fetch_all_content(['limit' => $post['record_count'], 'start' => $post['page']]);
+        if ($post['subchannel_name'] != 'all') :
+            $check_slug = $this->Mkategori->result_by_slug($post['subchannel_name']);
+            if ($check_slug['status'] == true) :
+                $idkategori = $check_slug['idkategori'];
+            else :
+                $idkategori = 0;
+            endif;
+            $sql = $this->Mhome->fetch_all_content(['category' => true, 'idcat' => $idkategori, 'limit' => $post['record_count'], 'start' => $post['page']]);
+        else :
+            $sql = $this->Mhome->fetch_all_content(['limit' => $post['record_count'], 'start' => $post['page']]);
+        endif;
 
         $content = '<div class="row">';
         $i = 0;

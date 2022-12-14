@@ -123,15 +123,14 @@
                         </div>
                     <?php } ?>
                 </div>
-                <div class="col-12">
-                    <button class="btn btn-nm btn-block btn-more content_center">
-                        <span>
-                            <div>Muat Lainnya</div>
-                            <i class="fas fa-angle-double-down"></i>
-                        </span>
-                    </button>
-                </div>
             </div>
+            <div id="load-content"></div>
+            <button class="btn btn-nm btn-block btn-more content_center" id="load-more-btn">
+                <span>
+                    <div>Muat Lainnya</div>
+                    <i class="fas fa-angle-double-down"></i>
+                </span>
+            </button>
             <!-- List Content Start -->
         </div>
         <!-- Sidebar Start -->
@@ -140,4 +139,34 @@
     </div>
 </div>
 <!-- News With Sidebar End -->
+<?= $this->endSection(); ?>
+<?= $this->section('script') ?>
+<script src="<?= assets() ?>js/app.js?v=1.0-beta1" type="text/javascript"></script>
+<script src="<?= assets() ?>js/load-more.js?v=1.0-beta1" type=" text/javascript"></script>
+<script>
+    window.last_publish_date = getDateTime().setup();
+
+    var btn_replace = '<button class="btn btn-nm btn-block btn-more content_center" id="load-more-btn">';
+    btn_replace += '<span><div>Muat Lainnya</div><i class="fas fa-angle-double-down"></i></span>';
+    btn_replace += "</button>";
+
+    load_more().setup({
+        last_publish_date: window.last_publish_date,
+        url: BASE_URL + 'request/load-more',
+        page: 6,
+        record_count: 6,
+        finish_button_gone: true,
+        max_hit: 3,
+        load_more_btn: "#load-more-btn",
+        load_more_div: "div#load-content",
+        loading_string: "Loading ...",
+        muat_lainnya_string: 'Muat Lainnya&nbsp;<i class="fas fa-angle-double-down"></i>',
+        gagal_muat_string: "Gagal Memuat Data",
+        channel_name: "all",
+        subchannel_name: "<?= $list['slug'] ?>",
+        token: "ZiZDeCPKLG4B6PlFlKWTyuHUCKDPQRWGh0bj7HIu",
+        infinit_load: true,
+        btn_replace: btn_replace
+    });
+</script>
 <?= $this->endSection(); ?>

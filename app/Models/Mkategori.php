@@ -34,4 +34,20 @@ class Mkategori extends Model
         endif;
         return $data;
     }
+    public function result_by_slug($slug)
+    {
+        $sql = $this->db->table('kategori')
+            ->getWhere(['slug_kategori' => $slug])
+            ->getRowArray();
+        if (isset($sql)) :
+            $data = [
+                'status' => true,
+                'idkategori' => $sql['id_kategori'],
+            ];
+        else :
+            $data['status'] = false;
+            $data['message'] = 'Data tidak ditemukan';
+        endif;
+        return $data;
+    }
 }
