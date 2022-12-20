@@ -58,6 +58,11 @@
                 <h3 class="py-2 section-title">
                     <span>Redaksi</span>
                 </h3>
+                <div class="infopage-title mt-4 mb-5 text-center">
+                    <h3>PT. EQUATOR NUSANTARA MEDIA</h3>
+                    <p>SK MENTERI HUKUM DAN HAK ASASI MANUSIA REPUBLIK INDONESIA</p>
+                    <p>Nomor : AHU-0056655.AH.01.01.TAHUN 2022</p>
+                </div>
                 <div class="style-list left">
                     <h5>Penasehat Hukum</h5>
                     <ul>
