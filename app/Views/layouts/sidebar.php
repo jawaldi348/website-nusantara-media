@@ -1,6 +1,6 @@
 <div class="col-lg-4 pt-3 pt-lg-0">
     <!-- Ads Start -->
-    <a href="#"><img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/sumbar1.jpg' ?>" alt=""></a>
+    <a href="#"><img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/loker-nusantara-media.jpg' ?>" alt=""></a>
     <!-- Ads End -->
 
     <!-- Social Follow Start -->
