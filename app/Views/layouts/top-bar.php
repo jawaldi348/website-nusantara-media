@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="col-lg-8 text-center text-lg-right">
-            <img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/sumbar2.jpg' ?>" alt="">
+            <img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/cafe-datuksen.jpg' ?>" alt="">
         </div>
     </div>
 </div>
