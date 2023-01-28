@@ -97,13 +97,20 @@
                             </p>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-2x fa-phone-alt text-primary mr-3"></i>
                         <div class="d-flex flex-column">
-                            <h6 class="font-weight-bold">Telelpon</h6>
+                            <h6 class="font-weight-bold">Telepon</h6>
                             <p class="m-0">
                                 <a href="tel:62821-6945-4080" target="_blank">+62821-6945-4080</a>
                             </p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-2x fa-building text-primary mr-3"></i>
+                        <div class="d-flex flex-column">
+                            <h6 class="font-weight-bold">Bank Nagari : 08000103008601</h6>
+                            <p class="m-0">A/N : EQUATOR NUSANTARA MEDIA PT</p>
                         </div>
                     </div>
                 </div>
