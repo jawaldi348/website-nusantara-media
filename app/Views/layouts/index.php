@@ -30,6 +30,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="<?= assets() ?>css/style.css?v=1.2-beta1">
+    <link rel="stylesheet" href="<?= assets() ?>css/custom.css?v=1.0.0-beta1">
     <!-- s: section style -->
     <?= $this->renderSection('style') ?>
     <!-- e: section style -->
