@@ -24,6 +24,17 @@
                 <small class="fab fa-instagram mr-2"></small><small>Instagram</small>
             </a>
         </div>
+        <div class="d-flex mb-3">
+            <a href="<?= $config['tiktok'] ?>" target="_blank" class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2" style="background: #000000;">
+                <small class="fab fa-tiktok mr-2"></small><small>Tiktok</small>
+            </a>
+            <a href="<?= $config['snackvideo'] ?>" target="_blank" class="d-block w-50 py-2 px-3 text-decoration-none ml-2" style="background: #f7c901; color: #302f2d;">
+                <small class="mr-2">
+                    <img src="https://1.bp.blogspot.com/-PuWtJg49s_0/YCPIGwfvu6I/AAAAAAAAD40/qSgEwMEWRB0u8yxozbojxWGChflTDrX8ACLcBGAsYHQ/s1600/Logo%2BSnack%2BVideo.png" width="16" height="12">
+                </small>
+                <small>SnackVideo</small>
+            </a>
+        </div>
     </div>
     <!-- Social Follow End -->
 
@@ -75,7 +86,10 @@
 
     <!-- Ads Start -->
     <div class="pb-3">
-        <a href="#"><img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/jatim1.jpg' ?>" alt=""></a>
+        <a href="#"><img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/ucapan_selamat_kab_solok.jpg' ?>" alt=""></a>
+    </div>
+    <div class="pb-3">
+        <a href="#"><img class="img-fluid" src="<?= getenv('urlassets') . 'iklan_manual/cafe-datuksen2.jpg' ?>" alt=""></a>
     </div>
     <!-- Ads End -->
 
