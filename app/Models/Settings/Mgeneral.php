@@ -17,7 +17,7 @@ class Mgeneral extends Model
         if ($params == 'all') {
             foreach ($res->getResult() as $re) {
                 if ($re->name == 'logo' or $re->name == 'favicon') {
-                    $result[$re->name] = getenv('urlassets') . 'main/' . $re->value;
+                    $result[$re->name] = $re->value == '' || !file_exists(getenv('dirassets') . $re->value) ? getenv('urlassets') . 'default/default-logo.png' : getenv('urlassets') . $re->value;
                 } else {
                     $result[$re->name] = $re->value;
                 }
