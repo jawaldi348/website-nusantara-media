@@ -58,10 +58,13 @@
                 <h3 class="py-2 section-title">
                     <span>Redaksi</span>
                 </h3>
-                <div class="infopage-title mt-4 mb-5 text-center">
+                <div class="infopage-title mt-4 mb-3 text-center">
                     <h3>PT. EQUATOR NUSANTARA MEDIA</h3>
                     <p>SK MENTERI HUKUM DAN HAK ASASI MANUSIA REPUBLIK INDONESIA</p>
                     <p>Nomor : AHU-0056655.AH.01.01.TAHUN 2022</p>
+                </div>
+                <div class="text-center mb-4">
+                    <img src="<?= getenv('urlassets') . 'dewan-pers.jpg' ?>" class="img-fluid" alt="Dewan Pers">
                 </div>
                 <div class="style-list left">
                     <h5>Penasehat Hukum</h5>
@@ -83,26 +86,16 @@
                     <h5>Reporter</h5>
                     <ul>
                         <li><i class="fa fa-user"></i> Nuzul Ramadana</li>
+                        <li><i class="fa fa-user"></i> Rahmat Saleh</li>
                         <li><i class="fa fa-user"></i> Hendra Jetri</li>
-                        <li><i class="fa fa-user"></i> Alfa Rezi</li>
-                        <li><i class="fa fa-user"></i> Arman</li>
-                        <li><i class="fa fa-user"></i> Nofrizal</li>
+                        <li><i class="fa fa-user"></i> Ahmad Adha</li>
+                        <li><i class="fa fa-user"></i> Abrol Huda</li>
                         <li><i class="fa fa-user"></i> Ari Hendriko</li>
                         <li><i class="fa fa-user"></i> Sofyan Hidayatullah</li>
-                        <li><i class="fa fa-user"></i> Abrol Huda</li>
-                        <li><i class="fa fa-user"></i> Ahmad Adha</li>
-                        <li><i class="fa fa-user"></i> Rahmat Saleh</li>
-                    </ul>
-                    <h5>Tim Liputan</h5>
-                    <ul>
-                        <li><i class="fa fa-user"></i> Darlinsah</li>
-                        <li><i class="fa fa-user"></i> Ahmad Husein</li>
-                        <li><i class="fa fa-user"></i> Icuk RZ</li>
-                        <li><i class="fa fa-user"></i> Berlian Novallino</li>
-                        <li><i class="fa fa-user"></i> Jawaldi</li>
-                        <li><i class="fa fa-user"></i> Lisa Oktafiyani</li>
+                        <li><i class="fa fa-user"></i> Nofrizal</li>
                         <li><i class="fa fa-user"></i> Idham Chalik</li>
-                        <li><i class="fa fa-user"></i> Zulkifli</li>
+                        <li><i class="fa fa-user"></i> Joni Agus Saputra</li>
+                        <li><i class="fa fa-user"></i> Randi Rahmat</li>
                     </ul>
                     <h5>IT Redaksi</h5>
                     <ul>
