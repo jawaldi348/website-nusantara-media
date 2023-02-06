@@ -8,6 +8,49 @@ class Comment extends BaseController
     {
         $this->Mcomment = new \App\Models\Mcomment();
     }
+    public function show_comments($commentResult)
+    {
+        $commentHTML = '';
+        foreach ($commentResult as $comment) {
+            $commentHTML .= '
+            <div class="komentar-iframe-min-list-content__item" id="cmt71550011">
+                <div class="komentar-iframe-min-media komentar-iframe-min-media--left komentar-iframe-min-media--image-circle">
+                    <div class="komentar-iframe-min-media__image"><span class="komentar-iframe-min-ratiobox"><img src="' . getenv('urlassets') . 'default/default-user.jpg' . '" alt="image author - ' . getenv('urlassets') . 'default/default-user.jpg' . '" title="image author - ' . getenv('urlassets') . 'default/default-user.jpg' . '"></span></div>
+                    <div class="komentar-iframe-min-media__text">
+                        <div class="komentar-iframe-min-media__user">' . $comment['nama'] . ' </div>
+                        <div class="komentar-iframe-min-media__date">' . $comment['timeAgo'] . '</div>
+                        <div class="komentar-iframe-min-media__desc">' . $comment['desc'] . '</div>';
+            $commentHTML .= $this->getCommentReply($comment['idcomment']);
+            $commentHTML .= '</div>';
+            $commentHTML .= '</div>';
+            $commentHTML .= '</div>';
+        }
+        return $commentHTML;
+    }
+    function getCommentReply($parentId = 0)
+    {
+        $commentQuery = $this->Mcomment->orderBy('id_comment', 'desc')->where(['idparent_comment' => $parentId])->findAll();
+        $commentHTML = '';
+        if ($commentQuery) :
+            foreach ($commentQuery as $comment) {
+                $commentHTML .= '
+                <div class="komentar-iframe-min-list-content komentar-iframe-min-list-content--bordered">
+                    <div class="komentar-iframe-min-list-content__item" id="cmt71550021">
+                        <div class="komentar-iframe-min-media komentar-iframe-min-media--left komentar-iframe-min-media--image-circle">
+                            <div class="komentar-iframe-min-media__image"><span class="komentar-iframe-min-ratiobox"><img src="' . getenv('urlassets') . 'default/default-user.jpg' . '" alt="image author - ' . getenv('urlassets') . 'default/default-user.jpg' . '" title="image author - ' . getenv('urlassets') . 'default/default-user.jpg' . '"></span></div>
+                            <div class="komentar-iframe-min-media__text">
+                                <div class="komentar-iframe-min-media__user">' . $comment["name_comment"] . ' </div>
+                                <div class="komentar-iframe-min-media__date">' . time_elapsed_string($comment["created_at"]) . '</div>
+                                <div class="komentar-iframe-min-media__desc">' . $comment["desc_comment"] . '</div>';
+                $commentHTML .= $this->getCommentReply($comment["id_comment"]);
+                $commentHTML .= '</div>';
+                $commentHTML .= '</div>';
+                $commentHTML .= '</div>';
+                $commentHTML .= '</div>';
+            }
+        endif;
+        return $commentHTML;
+    }
     public function add()
     {
         $post = $this->request->getPost();

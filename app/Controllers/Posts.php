@@ -11,6 +11,8 @@ class Posts extends BaseController
         $this->Mhome = new \App\Models\Mhome();
         $this->Mpost = new \App\Models\Mpost();
         $this->Mkategori = new \App\Models\Mkategori();
+
+        $this->CComment = new \App\Controllers\Comment();
     }
     public function read($kategori, $tanggal, $idpost, $slug)
     {
@@ -20,6 +22,7 @@ class Posts extends BaseController
         $data['read'] = $this->Mpost->detail($data['config'], $kategori, $tanggal, $idpost, $slug);
         $data['title'] = $data['read']['titleHead'];
         if ($data['read']['status'] == true) :
+            $data['komentar'] = $this->CComment->show_comments($data['read']['comments']);
             return view('post/read', $data);
         else :
             return redirect()->to(site_url('errors/show404'));

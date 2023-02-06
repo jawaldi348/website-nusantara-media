@@ -37,6 +37,9 @@
 <meta name="content_Editor" content="<?= $read['editor'] ?>">
 <meta name="content_Tag" content="<?= $read['tags'] ?>">
 <?= $this->endSection(); ?>
+<?= $this->section('style') ?>
+<link rel="stylesheet" href="<?= assets() ?>css/comment.css">
+<?= $this->endSection(); ?>
 <?= $this->section('content') ?>
 <!-- Breadcrumb Start -->
 <div class="container">
@@ -180,6 +183,13 @@
                     </div>
                 </form>
                 <div id="message-comment-result"></div>
+            </div>
+            <div class="komentar-iframe-min-comment-body">
+                <div class="komentar-iframe-min-comment-entry">
+                    <div class="komentar-iframe-min-list-content komentar-iframe-min-list-content--bordered">
+                        <?= $komentar ?>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Sidebar Start -->
