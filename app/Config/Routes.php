@@ -56,6 +56,7 @@ $routes->get('maintenance', 'Errors::maintenance');
 
 $routes->group('comment', function ($routes) {
     $routes->post('add', 'Comment::add');
+    $routes->post('sub-comment', 'Comment::sub_comment');
 });
 
 /*

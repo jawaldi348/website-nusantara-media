@@ -234,5 +234,31 @@
             }
         });
     });
+
+    $(document).on('click', '.btn-reply', function() {
+        $('.btn-reply').prop('disabled', true);
+        var idComment = $(this).attr('data-parent');
+        $('#message-subcomment-result-' + idComment).empty();
+        if ($('#sub_comment_form_' + idComment).html().length > 0) {
+            $('#sub_comment_form_' + idComment).empty();
+            $('.btn-reply').prop('disabled', false);
+        } else {
+            $('.visible-sub-comment').empty();
+            $.ajax({
+                type: 'POST',
+                url: BASE_URL + 'comment/sub-comment',
+                data: {
+                    'idcomment': idComment
+                },
+                success: function(response) {
+                    var resp = JSON.parse(response);
+                    if (resp.status == 'success') {
+                        $('#sub_comment_form_' + idComment).append(resp.view);
+                    }
+                    $('.btn-reply').prop('disabled', false);
+                }
+            });
+        }
+    });
 </script>
 <?= $this->endSection(); ?>
