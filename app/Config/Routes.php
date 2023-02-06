@@ -54,6 +54,10 @@ $routes->get('sitemap', 'Page::sitemap');
 
 $routes->get('maintenance', 'Errors::maintenance');
 
+$routes->group('comment', function ($routes) {
+    $routes->post('add', 'Comment::add');
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

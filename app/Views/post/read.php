@@ -154,7 +154,7 @@
                 <span>Komentar</span>
             </h3>
             <div class="mb-3">
-                <form class="comment">
+                <form id="add_comment" class="comment">
                     <input type="hidden" name="idpost" value="<?= $read['idpost'] ?>">
                     <div class="row">
                         <div class="form-group col-md-6">
@@ -179,6 +179,7 @@
                         </button>
                     </div>
                 </form>
+                <div id="message-comment-result"></div>
             </div>
         </div>
         <!-- Sidebar Start -->
@@ -187,4 +188,41 @@
     </div>
 </div>
 <!-- News With Sidebar End -->
+<?= $this->endSection(); ?>
+<?= $this->section('script') ?>
+<script>
+    $(document).ready(function() {
+        $('#add_comment').submit(function(event) {
+            event.preventDefault();
+            var formValues = $(this).serializeArray();
+            var data = {};
+            var submit = true;
+            $(formValues).each(function(i, field) {
+                if ($.trim(field.value).length < 1) {
+                    $("#add_comment [name='" + field.name + "']").addClass("is-invalid");
+                    submit = false;
+                } else {
+                    $("#add_comment [name='" + field.name + "']").removeClass("is-invalid");
+                    data[field.name] = field.value;
+                }
+            });
+            if (submit == true) {
+                $.ajax({
+                    type: 'POST',
+                    url: BASE_URL + 'comment/add',
+                    data: data,
+                    success: function(response) {
+                        var resp = JSON.parse(response);
+                        $('#message-comment-result').html(resp.message);
+                        $('#add_comment')[0].reset();
+                        if (resp.status == 'success') {} else {
+                            $('#tampil-modal').html(resp.view);
+                            $('#modal-login').modal('show');
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
 <?= $this->endSection(); ?>
