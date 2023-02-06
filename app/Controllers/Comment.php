@@ -34,7 +34,7 @@ class Comment extends BaseController
     }
     function getCommentReply($parentId = 0)
     {
-        $commentQuery = $this->Mcomment->orderBy('id_comment', 'desc')->where(['idparent_comment' => $parentId])->findAll();
+        $commentQuery = $this->Mcomment->orderBy('id_comment', 'desc')->where(['idparent_comment' => $parentId, 'status_comment' => '1'])->findAll();
         $commentHTML = '';
         if ($commentQuery) :
             foreach ($commentQuery as $comment) {
