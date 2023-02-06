@@ -32,6 +32,7 @@ class Mpost extends Model
             $url = 'read/' . $sql_kategori_akhir['slug_kategori'] . '/' . format_tglen_timestamp($sql['date_publish']) . '/' . $sql['id_post'] . '/' . $sql['slug_post'];
             $data = [
                 'status' => true,
+                'idpost' => $idpost,
                 'titleHead' => $sql['title_post'] . ' - ' . $config['sitename'],
                 'title' => $sql['title_post'],
                 'slug' => $sql['slug_post'],
@@ -122,6 +123,26 @@ class Mpost extends Model
             }
             $data_tags = rtrim($row_tags, ', ');
             $data['tags'] = $data_tags;
+            $sql_komen = $this->db->table('post_comments')
+                ->where(['idpost_comment' => $idpost, 'idparent_comment' => '0', 'status_comment' => '1'])
+                ->orderBy('id_comment', 'desc')
+                ->get()->getResultArray();
+            $data_komen = [];
+            $result_komen = [];
+            foreach ($sql_komen as $komen) {
+                $result_komen = [
+                    'idcomment' => $komen['id_comment'],
+                    'idparent' => $komen['idparent_comment'],
+                    'nama' => $komen['name_comment'],
+                    'email' => $komen['email_comment'],
+                    'desc' => $komen['desc_comment'],
+                    'like' => $komen['like_comment'],
+                    'created_at' => $komen['created_at'],
+                    'timeAgo' => time_elapsed_string($komen['created_at'])
+                ];
+                $data_komen[] = $result_komen;
+            }
+            $data['comments'] = $data_komen;
         else :
             $data['status'] = false;
             $data['titleHead'] = $config['sitename'] . ' - ' . $config['sitedescription'];
