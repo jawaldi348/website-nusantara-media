@@ -246,3 +246,74 @@ if (!function_exists('tanggal_indo_day')) {
         return $tgl_indo;
     }
 }
+
+if (!function_exists('timeAgo')) {
+    function timeAgo($timestamp)
+    {
+        if (!empty($timestamp)) {
+            $timeDiff = time() - strtotime($timestamp);
+            $seconds = $timeDiff;
+            $minutes = round($seconds / 60);
+            $hours = round($seconds / 3600);
+            $days = round($seconds / 86400);
+            $weeks = round($seconds / 604800);
+            $months = round($seconds / 2629440);
+            $years = round($seconds / 31553280);
+            if ($seconds <= 60) {
+                return 'Baru saja';
+            } else if ($minutes <= 60) {
+                if ($minutes == 1) {
+                    return '1 menit yang lalu';
+                } else {
+                    return $minutes . ' menit yang lalu';
+                }
+            } else if ($hours <= 24) {
+                if ($hours == 1) {
+                    return '1 jam yang lalu';
+                } else {
+                    return $hours . ' jam yang lalu';
+                }
+            } else if ($days <= 30) {
+                if ($days == 1) {
+                    return '1 hari yang lalu';
+                } else {
+                    return $days . ' hari yang lalu';
+                }
+            } else if ($months <= 12) {
+                if ($months == 1) {
+                    return '1 bulan yang lalu';
+                } else {
+                    return $months . ' bulan yang lalu';
+                }
+            } else {
+                if ($years == 1) {
+                    return '1 tahun yang lalu';
+                } else {
+                    return $years . ' tahun yang lalu';
+                }
+            }
+        }
+    }
+}
+
+if (!function_exists('time_elapsed_string')) {
+    function time_elapsed_string($datetime, $full = false)
+    {
+        $now = new DateTime;
+        $ago = new DateTime($datetime);
+        $diff = $now->diff($ago);
+        $diff->w = floor($diff->d / 7);
+        $diff->d -= $diff->w * 7;
+        $string = array('y' => 'tahun', 'm' => 'bulan', 'w' => 'minggu', 'd' => 'hari', 'h' => 'jam', 'i' => 'menit', 's' => 'detik');
+        foreach ($string as $k => &$v) {
+            if ($diff->$k) {
+                // $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+                $v = $diff->$k . ' ' . $v;
+            } else {
+                unset($string[$k]);
+            }
+        }
+        if (!$full) $string = array_slice($string, 0, 1);
+        return $string ? implode(', ', $string) . ' yang lalu' : 'baru saja';
+    }
+}
