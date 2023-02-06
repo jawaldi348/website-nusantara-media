@@ -200,6 +200,7 @@
 <!-- News With Sidebar End -->
 <?= $this->endSection(); ?>
 <?= $this->section('script') ?>
+<script src="<?= assets() ?>js/plugins-2.0.js"></script>
 <script>
     $(document).ready(function() {
         $('#add_comment').submit(function(event) {
@@ -225,10 +226,6 @@
                         var resp = JSON.parse(response);
                         $('#message-comment-result').html(resp.message);
                         $('#add_comment')[0].reset();
-                        if (resp.status == 'success') {} else {
-                            $('#tampil-modal').html(resp.view);
-                            $('#modal-login').modal('show');
-                        }
                     }
                 });
             }
@@ -259,6 +256,38 @@
                 }
             });
         }
+    });
+
+    $(document).on('click', '.btn-subcomment', function() {
+        var commentId = $(this).attr('data-comment-id');
+        var data = {};
+        var formId = '#add_subcomment_' + commentId;
+        $(formId).ajaxSubmit({
+            beforeSubmit: function() {
+                var formValues = $('#add_subcomment_' + commentId).serializeArray();
+                var submit = true;
+                $(formValues).each(function(i, field) {
+                    if ($.trim(field.value).length < 1) {
+                        $(formId + " [name='" + field.name + "']").addClass('is-invalid');
+                        submit = false;
+                    } else {
+                        $(formId + " [name='" + field.name + "']").removeClass('is-invalid');
+                        data[field.name] = field.value;
+                    }
+                });
+                if (submit == false) {
+                    return false;
+                }
+            },
+            type: 'POST',
+            url: BASE_URL + 'comment/add',
+            data: data,
+            success: function(response) {
+                var resp = JSON.parse(response);
+                $('#message-subcomment-result-' + commentId).html(resp.message);
+                $('#sub_comment_form_' + commentId).empty();
+            }
+        })
     });
 </script>
 <?= $this->endSection(); ?>

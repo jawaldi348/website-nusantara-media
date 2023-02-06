@@ -23,7 +23,8 @@ class Comment extends BaseController
                         <div class="komentar-iframe-min-comment-act">
                             <a href="javascript:void(0)" class="komentar-iframe-min-comment-bls btn-reply" data-parent="' . $comment['idcomment'] . '">Balas</a>
                         </div>
-                        <div id="sub_comment_form_' . $comment['idcomment'] . '" class="visible-sub-comment"></div>';
+                        <div id="sub_comment_form_' . $comment['idcomment'] . '" class="visible-sub-comment"></div>
+                        <div id="message-subcomment-result-' . $comment['idcomment'] . '"></div>';
             $commentHTML .= $this->getCommentReply($comment['idcomment']);
             $commentHTML .= '</div>';
             $commentHTML .= '</div>';
@@ -49,7 +50,8 @@ class Comment extends BaseController
                                 <div class="komentar-iframe-min-comment-act">
                                     <a href="javascript:void(0)" class="komentar-iframe-min-comment-bls btn-reply" data-parent="' . $comment['id_comment'] . '">Balas</a>
                                 </div>
-                                <div id="sub_comment_form_' . $comment['id_comment'] . '" class="visible-sub-comment"></div>';
+                                <div id="sub_comment_form_' . $comment['id_comment'] . '" class="visible-sub-comment"></div>
+                                <div id="message-subcomment-result-' . $comment['id_comment'] . '"></div>';
                 $commentHTML .= $this->getCommentReply($comment["id_comment"]);
                 $commentHTML .= '</div>';
                 $commentHTML .= '</div>';
