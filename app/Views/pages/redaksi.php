@@ -75,16 +75,13 @@
                     <ul>
                         <li><i class="fa fa-user"></i> Darlinsah, SH</li>
                     </ul>
-                    <h5>Pemimpin Perusahaan</h5>
-                    <ul>
-                        <li><i class="fa fa-user"></i> Ahmad Husein</li>
-                    </ul>
                     <h5>Redaktur</h5>
                     <ul>
                         <li><i class="fa fa-user"></i> Icuk RZ</li>
                     </ul>
                     <h5>Reporter</h5>
                     <ul>
+                        <li><i class="fa fa-user"></i> Ahmad Husein</li>
                         <li><i class="fa fa-user"></i> Nuzul Ramadana</li>
                         <li><i class="fa fa-user"></i> Rahmat Saleh</li>
                         <li><i class="fa fa-user"></i> Hendra Jetri</li>
