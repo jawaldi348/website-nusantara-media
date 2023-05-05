@@ -79,6 +79,7 @@
 
     <!-- Template Javascript -->
     <script src="<?= assets() ?>js/main.js?v=1.0-beta1"></script>
+    <script src="<?= assets() ?>js/app.js?v=1.0-beta1" type="text/javascript"></script>
     <script>
         var BASE_URL = "<?= site_url(); ?>";
     </script>

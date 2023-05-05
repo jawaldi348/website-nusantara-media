@@ -213,7 +213,6 @@
 <!-- News With Sidebar End -->
 <?= $this->endSection(); ?>
 <?= $this->section('script') ?>
-<script src="<?= assets() ?>js/app.js?v=1.0-beta1" type="text/javascript"></script>
 <script src="<?= assets() ?>js/load-more.js?v=1.0-beta1" type=" text/javascript"></script>
 <script>
     window.last_publish_date = getDateTime().setup();
