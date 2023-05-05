@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="<?= assets() ?>lib/flickity/flickity.css" media="screen">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="<?= assets() ?>css/style.css?v=1.2.0-beta1">
-    <link rel="stylesheet" href="<?= assets() ?>css/custom.css?v=1.0.0-beta1">
+    <link rel="stylesheet" href="<?= assets() ?>css/style.css?v=1.3.0-beta1">
+    <link rel="stylesheet" href="<?= assets() ?>css/custom.css?v=1.1.0-beta1">
     <!-- s: section style -->
     <?= $this->renderSection('style') ?>
     <!-- e: section style -->
